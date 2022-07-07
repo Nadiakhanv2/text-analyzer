@@ -124,7 +124,11 @@ export default function TextForm(props) {
           {text.split(" ").length}Words and {text.length} characters
         </p>
         <p className="text-info fw-bolder">
-          {0.08 * text.split(" ").length}Minutes Read
+          {0.08 *
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length}
+          Minutes Read
         </p>
         <h2 className="text-warning fw-bolder text-decoration-underline ">
           Preview
