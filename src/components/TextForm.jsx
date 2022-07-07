@@ -121,7 +121,12 @@ export default function TextForm(props) {
       <div className="container">
         <h1 className="text-warning fw-bolder">Text Summary</h1>
         <p className="text-info fw-bolder">
-          {text.split(" ").length}Words and {text.length} characters
+          {
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length
+          }
+          Words and {text.length} characters
         </p>
         <p className="text-info fw-bolder">
           {0.08 *
