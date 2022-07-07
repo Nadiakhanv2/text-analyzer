@@ -122,7 +122,8 @@ export default function TextForm(props) {
         <h1 className="text-warning fw-bolder">Text Summary</h1>
         <p className="text-info fw-bolder">
           {
-            text.split(" ").filter((element) => {
+            // /\s+/=----regular expression
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length
           }
